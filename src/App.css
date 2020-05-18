@@ -2,37 +2,330 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.centerAll {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.center-txt {
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    padding: 550px 0 0 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.imageMargin {
+    margin-top: 79px;
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.zone {
+    font-size:1.3em;
+}
+
+.box-left {
+    background-color: #FFFFFF;
+    width: 550px;
+    height: 825px;
+    margin: -100px 0 300px auto;
+    transition: all 1s;
+}
+
+.box-left > p {
+    text-align: left;
+    font-size: 0.9em;
+    color: #343F64;
+    width: 500px;
+    height: 100px;
+    padding: 20px;
+}
+
+.box-left > a {
+    color: #343F64;
+    text-decoration: underline;
+    font-size: 0.9em;
+    padding: 20px;
+    cursor:pointer;
+}
+
+.box-right {
+    background-color: #7b4397;
+    width: 550px;
+    height: 825px;
+    margin: -100px auto 300px 0;
+    transition: all 1s;
+}
+
+.teacher-img {
+    display:  block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+    padding: 50px;
+}
+
+.teacher-header {
+    padding: 20px 0px;
+    text-align: center;
+    color: #343F64;
+}
+
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+.main-nav {
+    font-size: 0.65em;
+    height: 80px;
+}
+
+.nav-txt {
+    padding: 30px 20px;
+}
+
+.list-img {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+/* FOOTER */
+footer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 75px;
+    transition: all 1s;
+}
+
+footer > section {
+    padding: 10px 25px 0 25px;
+}
+
+.facebook-btn {
+    background-color: rgba(0,0,0,0);
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    vertical-align: top;
+    border-style: none;
+    cursor: pointer;
+}
+
+.twitter-btn {
+    background-color: rgba(0,0,0,0);
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    vertical-align: top;
+    border-style: none;
+    cursor: pointer;
+}
+
+.insta-btn {
+     background-color: rgba(0,0,0,0);
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    vertical-align: top;
+    border-style: none;
+    cursor: pointer;
+}
+
+.foot-txt {
+    font-size: 0.4em;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 10px 0 0 0;
+}
+
+.contact-txt {
+    font-size: 0.5em;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.vertical {
+    width: 1px;
+    background-color: black;
+    height: 100%;
+    float: left;
+}
+
+@media only screen and (max-width: 1150px) {
+    .zone {
+        font-size:1.1em;
+    }
+
+    .box-left {
+        width: 225px;
+        height: 337.5px;
+        margin: -110px 0 150px auto;
+    }
+
+    .box-left > p {
+        font-size: 0.6em;
+        width: 200px;
+        height: 80px;
+        padding: 10px;
+    }
+
+    .box-left > a {
+        font-size: 0.6em;
+        padding: 10px;
+    }
+
+    .box-right {
+        width: 225px;
+        height: 337.5px;
+        margin: -110px auto 150px 0;
+    }
+
+    .teacher-img {
+        display:  block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .teacher-header {
+        padding: 10px 0px;
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .main-nav {
+        font-size: 0.5em;
+    }
+
+    .nav-txt {
+        padding: 30px 5px;
+    }
+
+    .box-left {
+        width: 112.5px;
+        height: 168.75px;
+        margin: 50px 0 75px auto;
+    }
+
+    .box-left > p {
+        font-size: 0.35em;
+        width: 100px;
+        height: 40px;
+        padding: 5px;
+    }
+
+    .box-left > a {
+        font-size: 0.35em;
+        padding: 10px;
+    }
+
+    .box-right {
+        width: 112.5px;
+        height: 168.75px;
+        margin: 50px auto 75px 0;
+    }
+
+    .teacher-img {
+        display:  block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .teacher-header {
+        padding: 5px 0px;
+        font-size: 0.4em;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .main-nav {
+        font-size: 0.35em;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-txt {
+        padding: 15px 2px;
+    }
+
+    .box-left {
+        width: 112.5px;
+        height: 168.75px;
+        margin: 0px 0 75px auto;
+    }
+
+    .box-left > p {
+        font-size: 0.35em;
+        width: 100px;
+        height: 40px;
+        padding: 5px;
+    }
+
+    .box-left > a {
+        font-size: 0.35em;
+        padding: 10px;
+    }
+
+    .box-right {
+        width: 112.5px;
+        height: 168.75px;
+        margin: 0px auto 75px 0;
+    }
+
+    .teacher-img {
+        display:  block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .teacher-header {
+        padding: 5px 0px;
+        font-size: 0.4em;
+    }
+
+    .imageMargin {
+        margin-top: 40px;
+    }
+
+    footer {
+        width: 100%;
+        height: 50px;
+    }
+
+    footer > section {
+        padding: 5px 5px 0 5px;
+    }
+
+    .foot-txt {
+        padding: 0;
+    }
 }
