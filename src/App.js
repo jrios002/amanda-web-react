@@ -73,8 +73,6 @@ class App extends Component {
           }, () => {
             this.setState({isSignedIn: true});
           });
-
-          console.log(this.state);
         });
       }
       else {
@@ -97,7 +95,6 @@ class App extends Component {
 
   onRouteChange = (route, isSignedIn) => {
     this.setState({route: route});
-    console.log(isSignedIn, 'route changed');
     if(!isSignedIn) {
       auth.signOut();
     }
