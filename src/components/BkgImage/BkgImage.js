@@ -2,11 +2,13 @@ import React from 'react';
 import homeImg from './AssignmentPic.PNG';
 import myRoomImg from './desks.jpg';
 
-const BkgImage = (route) => {
+var bkgImage = '';
+
+const BkgImage = ({route}) => {
 	if (route==='home'){
-		const bkgImage = homeImg;
+		bkgImage = homeImg;
 	} else if (route==='myRoom'){
-		const bkgImage = myRoomImg;
+		bkgImage = myRoomImg;
 	}
 
 	return (
