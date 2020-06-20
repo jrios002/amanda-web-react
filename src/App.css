@@ -310,6 +310,30 @@ footer > section {
         font-size: 0.6em;
     }
 
+    .box-left {
+        width: 150px;
+        height: 200px;
+        margin: 50px 0 75px auto;
+    }
+
+    .box-left > p {
+        font-size: 0.7em;
+        width: 120px;
+        height: 80px;
+        padding: 3px;
+    }
+
+    .box-left > a {
+        font-size: 0.35em;
+        padding: 3px;
+    }
+
+    .box-right {
+        width: 150px;
+        height: 200px;
+        margin: 50px auto 75px 0;
+    }
+
     .regText {
         font-size: 0.8rem;
     }
