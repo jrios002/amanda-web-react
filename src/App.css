@@ -195,6 +195,9 @@ footer > section {
 @media only screen and (max-width: 1150px) {
     .zone {
         font-size:1.1em;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 
     .regText {
@@ -247,6 +250,9 @@ footer > section {
 @media only screen and (max-width: 900px) {
     .zone {
         font-size: 0.8em;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 
     .regText {
@@ -311,6 +317,9 @@ footer > section {
 @media only screen and (max-width: 580px) {
     .zone {
         font-size: 0.6em;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 
     .box-left {
