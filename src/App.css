@@ -33,6 +33,9 @@
 
 .zone {
     font-size:1.3em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .regText {
