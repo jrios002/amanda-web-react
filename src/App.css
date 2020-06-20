@@ -35,6 +35,16 @@
     font-size:1.3em;
 }
 
+.regText {
+    font-size: 1.5rem;
+}
+
+.listPadding {
+    margin: 10px 0 0 40px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 .box-left {
     background-color: #FFFFFF;
     width: 550px;
@@ -72,9 +82,14 @@
     display:  block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 75%;
     height: auto;
     padding: 50px;
+}
+
+.assign-img {
+    width: 400px;
+    height: auto;
 }
 
 .teacher-header {
@@ -179,27 +194,35 @@ footer > section {
         font-size:1.1em;
     }
 
+    .regText {
+        font-size: 1.2rem;
+    }
+
+    .listPadding {
+        margin: 0 0 0 10px;
+    }
+
     .box-left {
-        width: 225px;
-        height: 337.5px;
+        width: 400px;
+        height: 500px;
         margin: -110px 0 150px auto;
     }
 
     .box-left > p {
-        font-size: 0.6em;
-        width: 200px;
-        height: 80px;
+        font-size: 0.8em;
+        width: 350px;
+        height: 150px;
         padding: 10px;
     }
 
     .box-left > a {
-        font-size: 0.6em;
+        font-size: 0.8em;
         padding: 10px;
     }
 
     .box-right {
-        width: 225px;
-        height: 337.5px;
+        width: 400px;
+        height: 500px;
         margin: -110px auto 150px 0;
     }
 
@@ -207,20 +230,24 @@ footer > section {
         display:  block;
         margin-left: auto;
         margin-right: auto;
-        width: 30%;
+        width: 50%;
         height: auto;
         padding: 20px;
     }
 
     .teacher-header {
         padding: 10px 0px;
-        font-size: 0.7em;
+        font-size: 1em;
     }
 }
 
 @media only screen and (max-width: 900px) {
     .zone {
         font-size: 0.8em;
+    }
+
+    .regText {
+        font-size: 1rem;
     }
 
     .main-nav {
@@ -232,15 +259,15 @@ footer > section {
     }
 
     .box-left {
-        width: 112.5px;
-        height: 168.75px;
+        width: 200px;
+        height: 250px;
         margin: 50px 0 75px auto;
     }
 
     .box-left > p {
-        font-size: 0.35em;
-        width: 100px;
-        height: 40px;
+        font-size: 0.7em;
+        width: 180px;
+        height: 80px;
         padding: 5px;
     }
 
@@ -250,8 +277,8 @@ footer > section {
     }
 
     .box-right {
-        width: 112.5px;
-        height: 168.75px;
+        width: 200px;
+        height: 250px;
         margin: 50px auto 75px 0;
     }
 
@@ -259,20 +286,32 @@ footer > section {
         display:  block;
         margin-left: auto;
         margin-right: auto;
-        width: 30%;
+        width: 50%;
         height: auto;
         padding: 10px;
     }
 
     .teacher-header {
         padding: 5px 0px;
-        font-size: 0.4em;
+        font-size: 0.8em;
+    }
+
+    .contact-txt {
+        font-size: 0.35em;
+    }
+
+    .foot-txt {
+        font-size: 0.35em;
     }
 }
 
 @media only screen and (max-width: 580px) {
     .zone {
         font-size: 0.6em;
+    }
+
+    .regText {
+        font-size: 0.8rem;
     }
 
     .main-nav {
@@ -284,44 +323,6 @@ footer > section {
 
     .nav-txt {
         padding: 15px 2px;
-    }
-
-    .box-left {
-        width: 112.5px;
-        height: 168.75px;
-        margin: 0px 0 75px auto;
-    }
-
-    .box-left > p {
-        font-size: 0.35em;
-        width: 100px;
-        height: 40px;
-        padding: 5px;
-    }
-
-    .box-left > a {
-        font-size: 0.35em;
-        padding: 10px;
-    }
-
-    .box-right {
-        width: 112.5px;
-        height: 168.75px;
-        margin: 0px auto 75px 0;
-    }
-
-    .teacher-img {
-        display:  block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 30%;
-        height: auto;
-        padding: 10px;
-    }
-
-    .teacher-header {
-        padding: 5px 0px;
-        font-size: 0.4em;
     }
 
     .imageMargin {

@@ -13,7 +13,8 @@ import SearchBox from './components/SearchBox/SearchBox';
 import ScienceNews from './components/ScienceNews/ScienceNews';
 import MyRoom from './components/MyRoom/MyRoom';
 import SignInOrRegister from './components/SignInOrRegister/SignInOrRegister';
-import { auth, createUserProfileDocument } from './Firebase/FirebaseUtils';
+import Links from './components/Links/Links';
+import { auth, createUserProfileDocument, retrieveLessons } from './Firebase/FirebaseUtils';
 import './App.css';
 
 const particlesOptions = {
@@ -32,13 +33,17 @@ const initialState = {
   currentUser: null,
   isSignedIn: false,
   lessons: [],
+  firebaseLessons: [],
+  firebaseRes: '',
   searchfield: '',
   route: 'home',
   assignment: {
-    id: '1',
-    name: 'testName',
-    date: 'testDate',
-    dueDate: 'testDueDate'
+    id: '',
+    name: '',
+    date: '',
+    dueDate: '',
+    imgUrl: '',
+    downloadUrl: ''
   }
 }
 
@@ -48,18 +53,18 @@ class App extends Component {
     this.state = initialState;
   }
 
-  loadAssignments = (data) => {
-    this.setState({assignment:{
-        id: data.id,
-        name: data.name,
-        date: data.date,
-        dueDate: data.dueDate
-    }})
+  unsubscribeFromAuth = null;
+  
+  getDatabaseData = async () => {
+    try {
+      this.setState({ lessons: await retrieveLessons()});
+    } catch (error) {
+      console.log(error, 'unable to get database data');
+    }
   }
 
-  unsubscribeFromAuth = null;
-
   componentDidMount() {
+    this.getDatabaseData();
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
@@ -80,9 +85,6 @@ class App extends Component {
         this.setState({isSignedIn: false});
       }
     });
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response=> response.json())
-    .then(users=> this.setState({ lessons: users}));
   }
 
   componentWillUnmount() {
@@ -98,12 +100,15 @@ class App extends Component {
     if(!isSignedIn) {
       auth.signOut();
     }
+    (async () => {
+      this.getDatabaseData();
+    })();
   }
 
   render (){
     const { lessons, searchfield, route, isSignedIn } = this.state;
 
-    const fileredLessons = lessons.filter(lesson =>{
+    const filteredLessons = lessons.filter(lesson =>{
       return lesson.name.toLowerCase().includes(searchfield.toLocaleLowerCase())
     })
 
@@ -119,7 +124,8 @@ class App extends Component {
               return (
                 <div>
                   <BkgImage route={route}/>
-                  <Profile onRouteChange={this.onRouteChange}/>
+                  <Profile onRouteChange={this.onRouteChange} lessons={filteredLessons} route={route}/>
+                  <Links />
                 </div>
               );
             case 'contacts':
@@ -137,7 +143,7 @@ class App extends Component {
                       <SearchBox searchChange={this.onSearchChange} />
                       <Scroll>
                         <ErrorBoundry>
-                          <AssignList lessons={fileredLessons} />
+                          <AssignList onRouteChange={this.onRouteChange} lessons={filteredLessons} route={route}/>
                         </ErrorBoundry>
                       </Scroll>
                     </div>
@@ -151,6 +157,7 @@ class App extends Component {
                   <div>
                     <BkgImage route={route}/>
                     <MyRoom />
+                    <Links />
                   </div>
                 );
               case 'signInOrRegister':

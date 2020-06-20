@@ -1,16 +1,25 @@
 import React from 'react';
 import fbicon from './FBicon.png';
-import instaicon from './Instaicon.png';
 import twitticon from './Twittericon.png';
+import googleIcon from './GoogleIcon.png';
 
 const WebFooter = () => {
 	return (
 		<footer className="f3 purple fixed">
 			<section>
 				<div>
-					<button className="facebook-btn"><img className="w-100 h-auto" src={fbicon} alt=''/></button>
+					<a href="https://www.facebook.com/pages/category/Elementary-School/Paramount-Terrace-Elementary-School-278545358825640/" target="_blank" rel="noopener noreferrer">
+						<img alt="FBIcon" src={fbicon} width="20" height="auto"></img>
+					</a>
+					<a href="https://twitter.com/ptecougars?lang=en" target="_blank" rel="noopener noreferrer">
+						<img alt="twitterIcon" src={twitticon} width="20" height="auto"></img>
+					</a>
+					<a href="https://classroom.google.com/" target="_blank" rel="noopener noreferrer">
+						<img alt="GoogleLogo" src={googleIcon} width="20" height="auto"></img>
+					</a>
+					{/* <button className="facebook-btn"><img className="w-100 h-auto" src={fbicon} alt=''/></button>
 					<button className="twitter-btn"><img src={twitticon} alt=''/></button>
-					<button className="insta-btn"><img src={instaicon} alt=''/></button>
+					<button className="insta-btn"><img src={googleIcon} alt=''/></button> */}
 				</div>
 				<div className="foot-txt">© Copyright 2018 Rios Productions</div>			
 			</section>
@@ -18,14 +27,14 @@ const WebFooter = () => {
 			<section>
 				<div>
 					<div className="contact-txt">Contact Me</div>
-					<div className="foot-txt">Tel: 806-206-5151</div>
-					<div className="foot-txt">Email: jrios4177@outlook.com</div>
+					<div className="foot-txt">Tel: 806-414-8046</div>
+					<div className="foot-txt">Email: Amanda.Rios@amaisd.org</div>
 				</div>
 			</section>
 			<div className="vertical"></div>
 			<section>
 				<div>
-					<div className="contact-txt">Address</div>
+					<div className="contact-txt">Paramount Terrace Elementary</div>
 					<div className="foot-txt">6501 Meister St.</div>
 					<div className="foot-txt">Amarillo, TX 79119</div>
 				</div>
