@@ -98,6 +98,12 @@
     color: #343F64;
 }
 
+.assign-header {
+    padding: 20px 0px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
 .zone:hover {
     -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
     -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
@@ -242,6 +248,11 @@ footer > section {
         padding: 10px 0px;
         font-size: 1em;
     }
+
+    .assign-header {
+        padding: 10px 0px;
+        font-size: 1em;
+    }
 }
 
 @media only screen and (max-width: 900px) {
@@ -295,6 +306,11 @@ footer > section {
     }
 
     .teacher-header {
+        padding: 5px 0px;
+        font-size: 1em;
+    }
+
+    .assign-header {
         padding: 5px 0px;
         font-size: 1em;
     }
@@ -366,7 +382,7 @@ footer > section {
     }
 
     .foot-txt {
-        font-size: 0.1em;
+        font-size: 0.3em;
         padding: 0;
     }
 

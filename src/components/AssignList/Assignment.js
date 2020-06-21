@@ -4,12 +4,12 @@ const Assignment = ({name, dueDate, route, onRouteChange, imgUrl, downloadUrl}) 
 	if (route === 'home') {
 		return (
 			<div>
-				<input className="teacher-header listPadding bg-transparent bn white pointer" type="button" value={name + " Due Date:" + dueDate} onClick={() => onRouteChange('assignments')}></input>
+				<input className="assign-header listPadding bg-transparent bn pointer" type="button" value={name + " Due Date:" + dueDate} onClick={() => onRouteChange('assignments')}></input>
 			</div>
 		);
 	} else {
 		return (
-			<div className='tc bg-purple dib br3 pa3 ma2 grow bw2 shadow-5 assign-img'>
+			<div className='tc bg-purple dib br3 pa3 ma2 grow bw0 shadow-5 assign-img'>
 				<a href={downloadUrl} target="_blank" rel="noopener noreferrer">
 					<img alt='assignImg' src={imgUrl} />
 				</a>
