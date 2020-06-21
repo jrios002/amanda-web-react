@@ -13,7 +13,7 @@ const Profile = ({ onRouteChange, lessons, route }) => {
 					<input className="f4 bg-transparent pointer bn underline" type="button" value="Read More" onClick={() => onRouteChange('myRoom')}></input>
 				</div>
 				<div className="box-right overflow-y-auto">
-					<div className="white b underline tc teacher-header pt4 pb3">Here are the current Assignments</div>
+					<div className="b underline tc assign-header pt4 pb3">Here are the current Assignments</div>
 					<AssignList lessons={lessons} route={route} onRouteChange={onRouteChange}/>
 				</div>
 			</div>
