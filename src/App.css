@@ -362,10 +362,31 @@ footer > section {
     }
 
     footer > section {
-        padding: 0px 0px 0 0px;
+        padding: 5px 5px 0 5px;
     }
 
     .foot-txt {
+        font-size: 0.1em;
+        padding: 0;
+    }
+
+    .facebook-btn {
+        background-color: rgba(0,0,0,0);
+        width: 10px;
+        height: 10px;
+        padding: 0;
+    }
+    
+    .twitter-btn {
+        background-color: rgba(0,0,0,0);
+        width: 10px;
+        height: 10px;
+        padding: 0;
+    }
+    
+    .insta-btn {
+        width: 10px;
+        height: 10px;
         padding: 0;
     }
 }

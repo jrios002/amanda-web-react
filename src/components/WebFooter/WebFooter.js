@@ -9,17 +9,14 @@ const WebFooter = () => {
 			<section>
 				<div>
 					<a href="https://www.facebook.com/pages/category/Elementary-School/Paramount-Terrace-Elementary-School-278545358825640/" target="_blank" rel="noopener noreferrer">
-						<img alt="FBIcon" src={fbicon} width="20" height="auto"></img>
+						<img className="facebook-btn" alt="FBIcon" src={fbicon} width="20" height="auto"></img>
 					</a>
 					<a href="https://twitter.com/ptecougars?lang=en" target="_blank" rel="noopener noreferrer">
-						<img alt="twitterIcon" src={twitticon} width="20" height="auto"></img>
+						<img className="twitter-btn" alt="twitterIcon" src={twitticon} width="20" height="auto"></img>
 					</a>
 					<a href="https://classroom.google.com/" target="_blank" rel="noopener noreferrer">
-						<img alt="GoogleLogo" src={googleIcon} width="20" height="auto"></img>
+						<img className="insta-btn" alt="GoogleLogo" src={googleIcon} width="20" height="auto"></img>
 					</a>
-					{/* <button className="facebook-btn"><img className="w-100 h-auto" src={fbicon} alt=''/></button>
-					<button className="twitter-btn"><img src={twitticon} alt=''/></button>
-					<button className="insta-btn"><img src={googleIcon} alt=''/></button> */}
 				</div>
 				<div className="foot-txt">© Copyright 2018 Rios Productions</div>			
 			</section>
