@@ -6,11 +6,11 @@ import 'firebase/database';
 const config = {
     apiKey: process.env.APIKEY,
     authDomain: process.env.AUTHDOMAIN,
-    databaseURL: process.env.DBDOMAIN,
-    projectId: process.env.PROJECTID,
-    storageBucket: process.env.STOREBUCKET,
-    messagingSenderId: process.env.MESSAGEID,
-    appId: process.env.APPID
+    databaseURL: "https://amandawebsite-214618.firebaseio.com",
+    projectId: "amandawebsite-214618",
+    storageBucket: "amandawebsite-214618.appspot.com",
+    messagingSenderId: "928654366383",
+    appId: "1:928654366383:web:e84229df564d619564e65a"
   };
 
   export const createUserProfileDocument = async (userAuth, additionalData) => {
