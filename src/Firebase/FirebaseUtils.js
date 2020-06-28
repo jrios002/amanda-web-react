@@ -4,8 +4,8 @@ import 'firebase/auth';
 import 'firebase/database';
 
 const config = {
-    apiKey: process.env.APIKEY,
-    authDomain: process.env.AUTHDOMAIN,
+    apiKey: "AIzaSyAvqilp3GlZHlBzkw-IUNoVli70kChg4a0",
+    authDomain: "amandawebsite-214618.firebaseapp.com",
     databaseURL: "https://amandawebsite-214618.firebaseio.com",
     projectId: "amandawebsite-214618",
     storageBucket: "amandawebsite-214618.appspot.com",
