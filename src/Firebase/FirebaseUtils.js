@@ -4,13 +4,13 @@ import 'firebase/auth';
 import 'firebase/database';
 
 const config = {
-    apiKey: "AIzaSyAvqilp3GlZHlBzkw-IUNoVli70kChg4a0",
-    authDomain: "amandawebsite-214618.firebaseapp.com",
-    databaseURL: "https://amandawebsite-214618.firebaseio.com",
-    projectId: "amandawebsite-214618",
-    storageBucket: "amandawebsite-214618.appspot.com",
-    messagingSenderId: "928654366383",
-    appId: "1:928654366383:web:e84229df564d619564e65a"
+    apiKey: process.env.APIKEY,
+    authDomain: process.env.AUTHDOMAIN,
+    databaseURL: process.env.DBDOMAIN,
+    projectId: process.env.PROJECTID,
+    storageBucket: process.env.STOREBUCKET,
+    messagingSenderId: process.env.MESSAGEID,
+    appId: process.env.APPID
   };
 
   export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -45,7 +45,9 @@ const config = {
 
   const provider = new firebase.auth.GoogleAuthProvider();
   provider.setCustomParameters({prompt: 'select_account'});
-  export const signInWithGoogle = () => auth.signInWithPopup(provider);
+  export const signInWithGoogle = () => {
+    auth.signInWithPopup(provider);
+  }
 
   export const lessonsRef = firebase.firestore().collection("lessons");
   
