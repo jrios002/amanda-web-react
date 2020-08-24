@@ -1,16 +1,16 @@
 import React from 'react';
 import Assignment from './Assignment';
+import { Link } from 'react-router-dom';
 
-const AssignList = ({ onRouteChange, lessons, route }) => {
+const AssignList = ({ onRouteChange, lessons }) => {
 	return (
 		<div className="pb6">
 			{
 				lessons.map((lesson, i) => {
-					if(route === 'assignments'){
+					if(window.location.pathname === '/assignments'){
 						return (
 							<Assignment className="mv5 mh5"
 								onRouteChange={onRouteChange}
-								route={route}
 								key={lessons[i].id}
 								id={lessons[i].id}
 								name={lessons[i].name}
@@ -25,7 +25,6 @@ const AssignList = ({ onRouteChange, lessons, route }) => {
 							<div className="pb4" key={lessons[i].id}>
 								<Assignment
 									onRouteChange={onRouteChange}
-									route={route}
 									key={lessons[i].id}
 									id={lessons[i].id}
 									name={lessons[i].name}
@@ -34,7 +33,9 @@ const AssignList = ({ onRouteChange, lessons, route }) => {
 									imgUrl={lessons[i].imgUrl}
 									downloadUrl={lessons[i].downloadUrl}
 								/>
-								<button className="black listPadding teacher-header pointer" onClick={() => onRouteChange('assignments')}>Read More</button>
+								<button className="listPadding teacher-header pointer" onClick={() => onRouteChange()}>
+									<Link className="black" to="/assignments">READ MORE</Link>
+								</button>
 							</div>
 						);
 					}

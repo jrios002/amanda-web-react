@@ -33,6 +33,7 @@ class SignUp extends React.Component {
                 password: '',
                 confirmPassword: ''
             });
+            document.location.pathname="/";
         } catch (error) {
             console.error(error);
         }

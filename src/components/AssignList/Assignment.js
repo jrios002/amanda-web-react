@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Assignment = ({name, dueDate, route, onRouteChange, imgUrl, downloadUrl}) => {
-	if (route === 'home') {
+	if (window.location.pathname === '/') {
 		return (
 			<div>
-				<input className="assign-header listPadding bg-transparent bn pointer" type="button" value={name + " Due Date:" + dueDate} onClick={() => onRouteChange('assignments')}></input>
+				<input className="assign-header listPadding bg-transparent bn pointer" type="button" value={name + " Due Date:" + dueDate} onClick={() => onRouteChange()}></input>
 			</div>
 		);
 	} else {

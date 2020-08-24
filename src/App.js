@@ -15,6 +15,7 @@ import MyRoom from './components/MyRoom/MyRoom';
 import SignInOrRegister from './components/SignInOrRegister/SignInOrRegister';
 import Links from './components/Links/Links';
 import { auth, createUserProfileDocument, retrieveLessons } from './Firebase/FirebaseUtils';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 const particlesOptions = {
@@ -31,12 +32,10 @@ const particlesOptions = {
 
 const initialState = {
   currentUser: null,
-  isSignedIn: false,
   lessons: [],
   firebaseLessons: [],
   firebaseRes: '',
   searchfield: '',
-  route: 'home',
   assignment: {
     id: '',
     name: '',
@@ -95,18 +94,14 @@ class App extends Component {
     this.setState({ searchfield: event.target.value })
   }
 
-  onRouteChange = (route, isSignedIn) => {
-    this.setState({route: route});
-    if(!isSignedIn) {
-      auth.signOut();
-    }
+  onRouteChange = () => {
     (async () => {
       this.getDatabaseData();
     })();
   }
 
   render (){
-    const { lessons, searchfield, route, isSignedIn } = this.state;
+    const { lessons, searchfield } = this.state;
 
     const filteredLessons = lessons.filter(lesson =>{
       return lesson.name.toLowerCase().includes(searchfield.toLocaleLowerCase())
@@ -114,65 +109,45 @@ class App extends Component {
 
     return (
       <div>
-        <Navigation onRouteChange={this.onRouteChange} currentUser={this.state.currentUser} isSignedIn={isSignedIn} />
+        <Navigation onRouteChange={this.onRouteChange} currentUser={this.state.currentUser} />
         <Particles className='particles'
           params={particlesOptions}
         />
-        {(() => {
-          switch(route) {
-            case 'home':
-              return (
-                <div>
-                  <BkgImage route={route}/>
-                  <Profile onRouteChange={this.onRouteChange} lessons={filteredLessons} route={route}/>
-                  <Links />
-                </div>
-              );
-            case 'contacts':
-              return(
-                <div>
-                  <MapContainer />
-                  <Contact />
-                </div>
-              );
-              case 'assignments':
-                return (!lessons.length) ?
+        <Switch>
+          <Route exact path='/' render={() => <div>
+              <BkgImage/>
+              <Profile onRouteChange={this.onRouteChange} lessons={filteredLessons} />
+              <Links />
+            </div>}/>
+          <Route exact path='/contacts' render={() => <div>
+            <MapContainer />
+            <Contact />
+          </div>}/>
+          <Route exact path='/assignments' render={() => {return (!lessons.length) ?
                   <h1>Loading</h1> :
                   (
                     <div style={{marginTop: 80}}>
                       <SearchBox searchChange={this.onSearchChange} />
                       <Scroll>
                         <ErrorBoundry>
-                          <AssignList onRouteChange={this.onRouteChange} lessons={filteredLessons} route={route}/>
+                          <AssignList onRouteChange={this.onRouteChange} lessons={filteredLessons}/>
                         </ErrorBoundry>
                       </Scroll>
                     </div>
-                  );
-              case 'science':
-                return(
-                    <ScienceNews />
-                );
-              case 'myRoom':
-                return (
-                  <div>
-                    <BkgImage route={route}/>
-                    <MyRoom />
-                    <Links />
-                  </div>
-                );
-              case 'signInOrRegister':
-                return (
-                  <SignInOrRegister />
-                );
-              default:
-                return (
-                  <div>
-                    <BkgImage />
-                    <Profile />
-                  </div>
-                );
-            }
-        })()}
+                  );}}/>
+          <Route exact path='/science' render={() => <div>
+            <ScienceNews />
+          </div>}/>
+          <Route exact path='/myRoom' render={() => <div>
+            <BkgImage />
+            <MyRoom />
+            <Links />
+          </div>}/>
+          <Route exact path='/signIn' render={() => <div>
+            <SignInOrRegister />
+          </div>}/>
+        </Switch>
+        
         <WebFooter />
       </div>
     );

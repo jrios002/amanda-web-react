@@ -15,3 +15,8 @@ body {
     background: -ms-color #7b4397; /* IE10+ */
     background: #7b4397; /* W3C */
 }
+
+a{
+  color: white;
+  text-decoration: none;
+}

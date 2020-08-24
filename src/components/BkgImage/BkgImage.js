@@ -4,10 +4,10 @@ import myRoomImg from './desks.jpg';
 
 var bkgImage = '';
 
-const BkgImage = ({route}) => {
-	if (route==='home'){
+const BkgImage = () => {
+	if (window.location.pathname==='/'){
 		bkgImage = homeImg;
-	} else if (route==='myRoom'){
+	} else if (window.location.pathname==='/myRoom'){
 		bkgImage = myRoomImg;
 	}
 

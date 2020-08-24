@@ -47,6 +47,11 @@ const config = {
   provider.setCustomParameters({prompt: 'select_account'});
   export const signInWithGoogle = () => {
     auth.signInWithPopup(provider);
+    firebase.auth().onAuthStateChanged((currentUser) => {
+      if (currentUser) {
+        document.location.pathname="/";
+      }
+    });
   }
 
   export const lessonsRef = firebase.firestore().collection("lessons");
