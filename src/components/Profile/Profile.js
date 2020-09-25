@@ -3,7 +3,7 @@ import AmandaPhoto from './AmandaPhoto.jpg';
 import AssignList from '../AssignList/AssignList';
 import { Link } from 'react-router-dom';
 
-const Profile = ({ onRouteChange, lessons, route }) => {
+const Profile = ({ onRouteChange, lessons }) => {
 	return (
 		<div>
 			<div className="zone flex flex-wrap justify-center">

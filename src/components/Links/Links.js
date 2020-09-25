@@ -10,7 +10,7 @@ const Links = () => {
             <div className="regText b mt4 mb2 tc white">Here are some useful links for you!!</div>
             <ul className="mb6 inline-flex list justify-center w-100">
                 <li className="ma3">
-                    <a href="https://ptamaisd.sharpschool.com/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://pt.amaisd.org/" target="_blank" rel="noopener noreferrer">
                         <img className="shadow-5" alt="ParaLogo" src={ParaLogo} width="118" height="auto"></img>
                     </a>
                 </li>

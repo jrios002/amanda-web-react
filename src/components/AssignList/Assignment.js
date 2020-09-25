@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Assignment = ({name, dueDate, route, onRouteChange, imgUrl, downloadUrl}) => {
+const Assignment = ({name, dueDate, onRouteChange, imgUrl, downloadUrl}) => {
 	if (window.location.pathname === '/') {
 		return (
 			<div>
